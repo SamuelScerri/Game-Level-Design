@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using TMPro;
 
 public class Interactor : MonoBehaviour
 {
+	[SerializeField]
+	private float _pointsObtained;
+
 	[SerializeField]
 	private float _interactableDistance;
 
@@ -33,10 +37,19 @@ public class Interactor : MonoBehaviour
 		
 		if (_currentInteractableItem)
 		{
+			Interactable reference = _currentInteractableItem.GetComponent<Interactable>();
+
+			if (!reference.activated)
+				_popupObjectInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "[E]\n" + reference.pointsNeededToExecute.ToString() + " Points Needed";
+			else _popupObjectInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Unlocked";
+			
 			_popupObjectInstance.SetActive(true);
 
-			if (Input.GetKeyDown("e"))
-				_currentInteractableItem.GetComponent<Interactable>().executeEvent.Invoke();
+			if (Input.GetKeyDown("e") && _pointsObtained >= reference.pointsNeededToExecute && !reference.activated)
+			{
+				reference.executeEvent.Invoke();
+				reference.activated = true;
+			}
 		}
 
 		else _popupObjectInstance.SetActive(false);

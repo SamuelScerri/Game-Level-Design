@@ -1301,11 +1301,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb2d898598d9044b28e60b20716d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactableDistance: 5
+  _interactableDistance: 1
   _interactableObjectLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 72
   _currentInteractableItem: {fileID: 0}
+  _popupObject: {fileID: 5600189758534321295, guid: f06c57751c88cb0439bf15149b4a2eb9,
+    type: 3}
 --- !u!1 &2906013363015915789
 GameObject:
   m_ObjectHideFlags: 0

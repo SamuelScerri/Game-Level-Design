@@ -6,5 +6,11 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
 	[SerializeField]
+	public bool activated;
+
+	[SerializeField]
+	public float pointsNeededToExecute;
+
+	[SerializeField]
 	public UnityEvent executeEvent;
 }
