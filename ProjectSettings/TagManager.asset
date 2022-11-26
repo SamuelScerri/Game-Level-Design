@@ -16,6 +16,8 @@ TagManager:
   - Wood (Static)
   - Dirt (Static)
   - Wood
+  - Cutscene
+  - UI
   layers:
   - Default
   - TransparentFX

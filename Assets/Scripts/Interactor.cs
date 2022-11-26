@@ -55,4 +55,10 @@ public class Interactor : MonoBehaviour
 		else _popupObjectInstance.SetActive(false);
 		_currentInteractableItem = null;
 	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Cutscene")
+			other.GetComponent<CutsceneManager>().StartCutscene();
+	}
 }
