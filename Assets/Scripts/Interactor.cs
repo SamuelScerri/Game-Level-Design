@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
+using InfimaGames.LowPolyShooterPack;
 
 public class Interactor : MonoBehaviour
 {
@@ -22,6 +23,16 @@ public class Interactor : MonoBehaviour
 	private GameObject _popupObject;
 
 	private GameObject _popupObjectInstance;
+
+
+	[SerializeField]
+	public Interactable interactable;
+
+	[SerializeField]
+	public GameObject inventory;
+
+	[SerializeField]
+	public Inventory weaponInventory;
 
 	private void Start()
 	{
@@ -61,4 +72,12 @@ public class Interactor : MonoBehaviour
 		if (other.tag == "Cutscene")
 			other.GetComponent<CutsceneManager>().StartCutscene();
 	}
+
+	public void WallBuy()
+    {
+        interactable.weaponToAdd.SetActive(false);
+        interactable.weaponToAdd.transform.parent = inventory.transform;
+        weaponInventory.Init(0);
+        weaponInventory.weapons[0].gameObject.SetActive(true);
+    }
 }

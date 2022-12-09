@@ -161,7 +161,7 @@ namespace InfimaGames.LowPolyShooterPack
             //Get Movement Input!
             Vector2 frameInput = playerCharacter.GetInputMovement();
             //Calculate local-space direction by using the player's input.
-            var movement = new Vector3(frameInput.x, 0.0f, frameInput.y);
+            var movement = new Vector3(frameInput.x, 0, frameInput.y);
             
             //Running speed calculation.
             if(playerCharacter.IsRunning())
@@ -172,13 +172,15 @@ namespace InfimaGames.LowPolyShooterPack
                 movement *= speedWalking;
             }
 
+ 
+
             //World space velocity calculation. This allows us to add it to the rigidbody's velocity properly.
             movement = transform.TransformDirection(movement);
 
             #endregion
             
             //Update Velocity.
-            Velocity = new Vector3(movement.x, 0.0f, movement.z);
+            Velocity = new Vector3(movement.x, movement.y, movement.z);
         }
 
         /// <summary>

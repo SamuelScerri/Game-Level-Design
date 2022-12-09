@@ -13,4 +13,7 @@ public class Interactable : MonoBehaviour
 
 	[SerializeField]
 	public UnityEvent executeEvent;
+
+	[SerializeField]
+	public GameObject weaponToAdd;
 }
