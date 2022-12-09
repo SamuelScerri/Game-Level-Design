@@ -51,7 +51,11 @@ public class Interactor : MonoBehaviour
 			Interactable reference = _currentInteractableItem.GetComponent<Interactable>();
 
 			if (!reference.activated)
-				_popupObjectInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "[E]\n" + reference.pointsNeededToExecute.ToString() + " Points Needed";
+			{
+				if (reference.pointsNeededToExecute > 0)
+					_popupObjectInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "[E]\n" + reference.pointsNeededToExecute.ToString() + " Points Needed To: " + reference.textPopup;
+				else _popupObjectInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "[E]\n" + reference.textPopup;
+			}
 			else _popupObjectInstance.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "Unlocked";
 			
 			_popupObjectInstance.SetActive(true);

@@ -16,4 +16,7 @@ public class Interactable : MonoBehaviour
 
 	[SerializeField]
 	public GameObject weaponToAdd;
+
+	[SerializeField]
+	public string textPopup;
 }
