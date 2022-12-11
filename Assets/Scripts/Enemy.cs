@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
             //Play Death Animation
             animator.SetTrigger("die");
             GetComponent<Collider>().enabled = false;
-
         }
         else{
             //Play Damage Animation
