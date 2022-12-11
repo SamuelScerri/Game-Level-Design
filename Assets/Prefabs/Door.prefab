@@ -204,6 +204,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   weaponToAdd: {fileID: 0}
+  textPopup: Open Door
 --- !u!114 &5578401754576882920
 MonoBehaviour:
   m_ObjectHideFlags: 0
