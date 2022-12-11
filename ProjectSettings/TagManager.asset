@@ -16,6 +16,7 @@ TagManager:
   - Cutscene
   - UI
   - Enemy
+  - Waypoint
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - Post Processing
   - Post Processing Weapon
   - Post Processing Scope
-  - Invisible Wall
+  - 
   - Projectile
   - 
   - 
