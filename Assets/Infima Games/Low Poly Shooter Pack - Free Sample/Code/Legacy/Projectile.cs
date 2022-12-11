@@ -22,7 +22,9 @@ public class Projectile : MonoBehaviour {
 	public Transform [] dirtImpactPrefabs;
 	public Transform []	concreteImpactPrefabs;
 
-	private void Start ()
+    public int damageAmount = 20;
+
+    private void Start ()
 	{
 		//Grab the game mode service, we need it to access the player character!
 		var gameModeService = ServiceLocator.Current.Get<IGameModeService>();
@@ -33,8 +35,8 @@ public class Projectile : MonoBehaviour {
 		StartCoroutine (DestroyAfter ());
 	}
 
-	//If the bullet collides with anything
-	private void OnCollisionEnter (Collision collision)
+    //If the bullet collides with anything
+    private void OnCollisionEnter (Collision collision)
 	{
 		//Ignore collisions with other projectiles.
 		if (collision.gameObject.GetComponent<Projectile>() != null)
@@ -66,11 +68,12 @@ public class Projectile : MonoBehaviour {
 			Destroy (gameObject);
 		}
 
-		//If bullet collides with "Blood" tag
-		if (collision.transform.tag == "Blood") 
+		//If bullet collides with "Enemy" tag
+		if (collision.transform.tag == "Enemy") 
 		{
-			//Instantiate random impact prefab from array
-			Instantiate (bloodImpactPrefabs [Random.Range 
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damageAmount);
+            //Instantiate random impact prefab from array
+            Instantiate (bloodImpactPrefabs [Random.Range 
 				(0, bloodImpactPrefabs.Length)], transform.position, 
 				Quaternion.LookRotation (collision.contacts [0].normal));
 			//Destroy bullet object

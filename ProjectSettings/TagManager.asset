@@ -12,12 +12,10 @@ TagManager:
   - ExplosiveBarrel
   - Target
   - GasTank
-  - Metal (Static)
-  - Wood (Static)
-  - Dirt (Static)
   - Wood
   - Cutscene
   - UI
+  - Enemy
   layers:
   - Default
   - TransparentFX
