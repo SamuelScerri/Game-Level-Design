@@ -125,6 +125,8 @@ namespace InfimaGames.LowPolyShooterPack
 		/// Look Axis Values.
 		/// </summary>
 		private Vector2 axisMovement;
+
+		public PauseManager pauseManager;
 		
 		/// <summary>
 		/// True if the player is holding the aiming button.
@@ -297,32 +299,38 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		private void Fire()
 		{
-			//Save the shot time, so we can calculate the fire rate correctly.
-			lastShotTime = Time.time;
-			//Fire the weapon! Make sure that we also pass the scope's spread multiplier if we're aiming.
-			equippedWeapon.Fire();
+			if(pauseManager._isPaused == false)
+			{
+                //Save the shot time, so we can calculate the fire rate correctly.
+                lastShotTime = Time.time;
+                //Fire the weapon! Make sure that we also pass the scope's spread multiplier if we're aiming.
+                equippedWeapon.Fire();
 
-			//Play firing animation.
-			const string stateName = "Fire";
-			characterAnimator.CrossFade(stateName, 0.05f, layerOverlay, 0);
+                //Play firing animation.
+                const string stateName = "Fire";
+                characterAnimator.CrossFade(stateName, 0.05f, layerOverlay, 0);
+            }
 		}
 
 		private void PlayReloadAnimation()
 		{
-			#region Animation
+            if (equippedWeapon.GetAmmunitionCurrent() != equippedWeapon.GetAmmunitionTotal())
+            {
+                #region Animation
 
-			//Get the name of the animation state to play, which depends on weapon settings, and ammunition!
-			string stateName = equippedWeapon.HasAmmunition() ? "Reload" : "Reload Empty";
-			//Play the animation state!
-			characterAnimator.Play(stateName, layerActions, 0.0f);
+                //Get the name of the animation state to play, which depends on weapon settings, and ammunition!
+                string stateName = equippedWeapon.HasAmmunition() ? "Reload" : "Reload Empty";
+				//Play the animation state!
+				characterAnimator.Play(stateName, layerActions, 0.0f);
 
-			//Set.
-			reloading = true;
+				//Set.
+				reloading = true;
 
-			#endregion
-
-			//Reload.
-			equippedWeapon.Reload();
+				#endregion
+			
+                //Reload.
+                equippedWeapon.Reload();
+            }
 		}
 
 		/// <summary>

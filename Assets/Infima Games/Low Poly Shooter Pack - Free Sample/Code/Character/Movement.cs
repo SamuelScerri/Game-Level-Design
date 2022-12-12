@@ -77,6 +77,8 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         private readonly RaycastHit[] groundHits = new RaycastHit[8];
 
+        public PauseManager pauseManager;
+
         #endregion
 
         #region UNITY FUNCTIONS
@@ -133,21 +135,35 @@ namespace InfimaGames.LowPolyShooterPack
 			
         protected override void FixedUpdate()
         {
-            //Move.
-            MoveCharacter();
-            
-            //Unground.
-            grounded = false;
+            if(pauseManager._isPaused == false)
+            {
+                //Move.
+                MoveCharacter();
+
+                //Unground.
+                grounded = false;
+
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
 
         /// Moves the camera to the character, processes jumping and plays sounds every frame.
         protected override  void Update()
         {
-            //Get the equipped weapon!
-            equippedWeapon = playerCharacter.GetInventory().GetEquipped();
-            
-            //Play Sounds!
-            PlayFootstepSounds();
+            if(pauseManager._isPaused == false)
+            {
+                //Get the equipped weapon!
+                equippedWeapon = playerCharacter.GetInventory().GetEquipped();
+
+                //Play Sounds!
+                PlayFootstepSounds();
+            }
         }
 
         #endregion

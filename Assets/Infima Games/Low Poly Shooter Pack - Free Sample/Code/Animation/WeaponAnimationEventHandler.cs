@@ -15,7 +15,6 @@ namespace InfimaGames.LowPolyShooterPack
         /// Equipped Weapon.
         /// </summary>
         private WeaponBehaviour weapon;
-
         #endregion
 
         #region UNITY
