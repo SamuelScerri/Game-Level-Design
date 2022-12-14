@@ -17,6 +17,7 @@ TagManager:
   - UI
   - Enemy
   - Waypoint
+  - Waypoint2
   layers:
   - Default
   - TransparentFX
