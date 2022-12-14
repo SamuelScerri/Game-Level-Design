@@ -51,7 +51,7 @@ public class PauseManager : MonoBehaviour
 
     private void Start()
     {
-        _uiItems = GameObject.FindGameObjectsWithTag("UI");
+        
 
         _pauseScreen = GameObject.Find("PauseCanvas").GetComponent<Image>();
 
@@ -99,6 +99,8 @@ public class PauseManager : MonoBehaviour
             gObjQuitButton.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible= true;
+
+            _uiItems = GameObject.FindGameObjectsWithTag("UI");
 
             foreach (GameObject item in _uiItems)
             {
