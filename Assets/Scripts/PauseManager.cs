@@ -27,6 +27,9 @@ public class PauseManager : MonoBehaviour
     //The variable storing the pause state (True / False)
     public bool _isPaused;
 
+     //Get all UI objects
+    GameObject[] _uiItems;
+
     //The getter and setter in one place
     public bool Paused
     {
@@ -48,6 +51,8 @@ public class PauseManager : MonoBehaviour
 
     private void Start()
     {
+        _uiItems = GameObject.FindGameObjectsWithTag("UI");
+
         _pauseScreen = GameObject.Find("PauseCanvas").GetComponent<Image>();
 
         //Subscribing
@@ -79,6 +84,8 @@ public class PauseManager : MonoBehaviour
         Paused = !Paused;
         //Update the UI
         _pauseScreen.enabled = Paused;
+
+
     }
 
     //The listener/subscibed method, listening to the event
@@ -92,6 +99,11 @@ public class PauseManager : MonoBehaviour
             gObjQuitButton.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible= true;
+
+            foreach (GameObject item in _uiItems)
+            {
+                item.SetActive(false);
+            }
         }
         else
         {
@@ -100,6 +112,11 @@ public class PauseManager : MonoBehaviour
             gObjQuitButton.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            foreach (GameObject item in _uiItems)
+            {
+                item.SetActive(true);
+            }
         }
     }
 
