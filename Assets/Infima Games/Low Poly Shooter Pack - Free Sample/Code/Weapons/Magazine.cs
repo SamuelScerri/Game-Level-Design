@@ -15,7 +15,8 @@ namespace InfimaGames.LowPolyShooterPack
         
         [Tooltip("Total Ammunition.")]
         [SerializeField]
-        private int ammunitionTotal = 10;
+        public int ammunitionTotal = 10;
+        public int maxAmmunitionPerMag = 5;
 
         [Header("Interface")]
 
@@ -31,6 +32,12 @@ namespace InfimaGames.LowPolyShooterPack
         /// Ammunition Total.
         /// </summary>
         public override int GetAmmunitionTotal() => ammunitionTotal;
+        public override int GetMaxAmmuniationPerMag() => maxAmmunitionPerMag;
+        public override void SetAmmuniationTotal(int amount)
+        {
+            ammunitionTotal = amount;
+        }
+
         /// <summary>
         /// Sprite.
         /// </summary>

@@ -158,7 +158,7 @@ namespace InfimaGames.LowPolyShooterPack
             #endregion
 
             //Max Out Ammo.
-            ammunitionCurrent = magazineBehaviour.GetAmmunitionTotal();
+            ammunitionCurrent = magazineBehaviour.GetMaxAmmuniationPerMag();
         }
 
         #endregion
@@ -220,6 +220,7 @@ namespace InfimaGames.LowPolyShooterPack
             animator.Play(stateName, 0, 0.0f);
             //Reduce ammunition! We just shot, so we need to get rid of one!
             ammunitionCurrent = Mathf.Clamp(ammunitionCurrent - 1, 0, magazineBehaviour.GetAmmunitionTotal());
+            
 
             //Play all muzzle effects.
             muzzleBehaviour.Effect();
@@ -240,9 +241,11 @@ namespace InfimaGames.LowPolyShooterPack
 
         public override void FillAmmunition(int amount)
         {
+            magazineBehaviour.SetAmmuniationTotal(Mathf.Clamp(magazineBehaviour.GetAmmunitionTotal() - (magazineBehaviour.GetMaxAmmuniationPerMag() - ammunitionCurrent), 0, magazineBehaviour.GetAmmunitionTotal()));
+
                 //Update the value by a certain amount.
-                ammunitionCurrent = amount != 0 ? Mathf.Clamp(ammunitionCurrent + amount,
-                    0, GetAmmunitionTotal()) : magazineBehaviour.GetAmmunitionTotal();
+            ammunitionCurrent = amount != 0 ? Mathf.Clamp(ammunitionCurrent + amount,
+                 0, magazineBehaviour.GetMaxAmmuniationPerMag()) : magazineBehaviour.GetMaxAmmuniationPerMag();
         }
 
         public override void EjectCasing()

@@ -13360,12 +13360,6 @@ PrefabInstance:
       propertyPath: interactable
       value: 
       objectReference: {fileID: 1824447272}
-    - target: {fileID: 5725166946916116928, guid: f4ffe0a3d63bc2042835373150d1b432,
-        type: 3}
-      propertyPath: pauseManager
-      value: 
-      objectReference: {fileID: 5341712331378120414, guid: 1cfd28d46bca0dd4884ce6988eee22f1,
-        type: 3}
     - target: {fileID: 5725166946916116930, guid: f4ffe0a3d63bc2042835373150d1b432,
         type: 3}
       propertyPath: m_Name

@@ -1109,7 +1109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965555d451af4a2299927c4e3dd7ee09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammunitionTotal: 30
+  ammunitionTotal: 120
+  maxAmmunitionPerMag: 30
   sprite: {fileID: 21300000, guid: 51d720b69910c244aa44a082bddf0155, type: 3}
 --- !u!1 &5725166946216042839
 GameObject:
@@ -1781,7 +1782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965555d451af4a2299927c4e3dd7ee09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammunitionTotal: 10
+  ammunitionTotal: 30
+  maxAmmunitionPerMag: 5
   sprite: {fileID: 21300000, guid: d96558cda50c04347b69780fd84c6fc9, type: 3}
 --- !u!1 &5725166946424214004
 GameObject:
@@ -3117,6 +3119,7 @@ MonoBehaviour:
   audioClipRunning: {fileID: 8300000, guid: d2add02f58e61e640aba3ae9110591cb, type: 3}
   speedWalking: 4
   speedRunning: 6.8
+  pauseManager: {fileID: 0}
 --- !u!114 &5725166946916116957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3134,6 +3137,7 @@ MonoBehaviour:
   dampTimeLocomotion: 0.1
   dampTimeAiming: 0.3
   characterAnimator: {fileID: 5725166945979664319}
+  pauseManager: {fileID: 0}
 --- !u!114 &5725166946916116956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3488,6 +3492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bfb2d898598d9044b28e60b20716d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseManager: {fileID: 5341712331378120414, guid: 1cfd28d46bca0dd4884ce6988eee22f1,
+    type: 3}
   _pointsObtained: 200
   _interactableDistance: 2
   _interactableObjectLayers:
