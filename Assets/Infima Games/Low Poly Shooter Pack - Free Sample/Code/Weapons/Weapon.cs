@@ -199,8 +199,11 @@ namespace InfimaGames.LowPolyShooterPack
 
         public override void Reload()
         {
-            //Play Reload Animation.
-            animator.Play(HasAmmunition() ? "Reload" : "Reload Empty", 0, 0.0f);
+            if(GetAmmunitionCurrent() != GetAmmunitionTotal())
+            {
+                //Play Reload Animation.
+                animator.Play(HasAmmunition() ? "Reload" : "Reload Empty", 0, 0.0f);
+            }
         }
         public override void Fire(float spreadMultiplier = 1.0f)
         {

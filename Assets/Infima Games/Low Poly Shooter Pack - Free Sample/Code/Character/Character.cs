@@ -314,7 +314,7 @@ namespace InfimaGames.LowPolyShooterPack
 
 		private void PlayReloadAnimation()
 		{
-            if (equippedWeapon.GetAmmunitionCurrent() != equippedWeapon.GetAmmunitionTotal())
+            if (equippedWeapon.GetAmmunitionCurrent() != equippedWeaponMagazine.GetMaxAmmuniationPerMag())
             {
                 #region Animation
 
