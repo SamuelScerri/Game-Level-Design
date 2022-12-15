@@ -4832,6 +4832,7 @@ GameObject:
   - component: {fileID: 8557496013820248438}
   - component: {fileID: 8557496013820248439}
   - component: {fileID: 8557496013820248436}
+  - component: {fileID: -2411276498393351452}
   m_Layer: 0
   m_Name: Blood Particle System
   m_TagString: Untagged
@@ -9634,3 +9635,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-2411276498393351452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8557496013820248437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1ff595cafaf634c8876e79d424183b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  despawnTimer: 10
+  impactSounds:
+  - {fileID: 8300000, guid: 172f576bc4226094180d5993f9325d57, type: 3}
+  - {fileID: 8300000, guid: ead9439cc21260d44b99cc5037814e27, type: 3}
+  - {fileID: 8300000, guid: 26c5b6d560a62c946accc4e4207b66cc, type: 3}
+  - {fileID: 8300000, guid: 37e08e3552104a248a91d21d637ef2f4, type: 3}
+  audioSource: {fileID: 82763957066427458, guid: 5e02303289b3c494e8e185be0fbbd405,
+    type: 3}
