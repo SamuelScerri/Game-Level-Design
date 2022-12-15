@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
             //Play Death Animation
             animator.SetTrigger("die");
             GetComponent<Collider>().enabled = false;
+            Destroy(gameObject, 5);
             ItemDrop();
         }
         else{
