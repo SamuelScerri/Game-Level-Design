@@ -319,6 +319,11 @@ namespace InfimaGames.LowPolyShooterPack
                 #region Animation
 
                 //Get the name of the animation state to play, which depends on weapon settings, and ammunition!
+				Debug.Log("Ammunition Current: " + equippedWeapon.GetAmmunitionCurrent());
+				Debug.Log("Ammunition Total: " + equippedWeapon.GetAmmunitionTotal());
+
+				if (equippedWeapon.GetAmmunitionTotal() != 0)
+				{
                 string stateName = equippedWeapon.HasAmmunition() ? "Reload" : "Reload Empty";
 				//Play the animation state!
 				characterAnimator.Play(stateName, layerActions, 0.0f);
@@ -330,6 +335,8 @@ namespace InfimaGames.LowPolyShooterPack
 			
                 //Reload.
                 equippedWeapon.Reload();
+				}
+
             }
 		}
 
