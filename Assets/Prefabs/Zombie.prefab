@@ -139,6 +139,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   animator: {fileID: 4653471037789356720}
+  itemDrops:
+  - {fileID: 5008825043329289094, guid: f3d800316106b264e892269c75664071, type: 3}
+  - {fileID: 2403356357806753994, guid: 6000cb0256963bf459756ea4ac7cd5df, type: 3}
+  - {fileID: 0}
 --- !u!95 &4653471037789356720 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 8f7380da49034cd488ddff94b1ac35d1,

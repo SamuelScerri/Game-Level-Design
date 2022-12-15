@@ -8,7 +8,7 @@ public class HealthManager : MonoBehaviour
 	private GameObject _healthPrefab;
 
 	[SerializeField]
-	private int _currentHealth;
+	public int _currentHealth;
 
 	private void Start()
 	{

@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public int HP = 100;
     public Animator animator;
-
+    public GameObject[] itemDrops;
     public void TakeDamage(int damageAmount)
     {
         HP -= damageAmount;
@@ -15,10 +15,20 @@ public class Enemy : MonoBehaviour
             //Play Death Animation
             animator.SetTrigger("die");
             GetComponent<Collider>().enabled = false;
+            ItemDrop();
         }
         else{
             //Play Damage Animation
             animator.SetTrigger("damage");
+        }
+    }
+
+    private void ItemDrop()
+    {
+        int randInt = Random.Range(0, itemDrops.Length);
+        if (itemDrops[randInt] !=null)
+        {
+            Instantiate(itemDrops[randInt], transform.position, Quaternion.identity);
         }
     }
 }

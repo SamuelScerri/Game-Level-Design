@@ -100,7 +100,7 @@ namespace InfimaGames.LowPolyShooterPack
 		/// <summary>
 		/// The magazine equipped on the character's weapon.
 		/// </summary>
-		private MagazineBehaviour equippedWeaponMagazine;
+		public MagazineBehaviour equippedWeaponMagazine;
 		
 		/// <summary>
 		/// True if the character is reloading.
