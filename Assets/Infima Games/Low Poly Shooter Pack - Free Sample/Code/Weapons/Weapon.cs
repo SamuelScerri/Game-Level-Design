@@ -246,30 +246,13 @@ namespace InfimaGames.LowPolyShooterPack
 
         public override void FillAmmunition(int amount)
         {
-            int magDifference = magazineBehaviour.GetMaxAmmuniationPerMag() - ammunitionCurrent;
-
-
-                //Update the value by a certain amount.
-            //ammunitionCurrent = amount != 0 ? Mathf.Clamp(ammunitionCurrent + amount,
-                 //0, magazineBehaviour.GetMaxAmmuniationPerMag()) : magazineBehaviour.GetMaxAmmuniationPerMag();
+            int reloadAmount = Mathf.Clamp(magazineBehaviour.GetMaxAmmuniationPerMag() - ammunitionCurrent, 0, magazineBehaviour.GetAmmunitionTotal());
 
             if (magazineBehaviour.GetAmmunitionTotal() != 0)
             {
-            if (magazineBehaviour.GetAmmunitionTotal() >= magazineBehaviour.GetMaxAmmuniationPerMag())
-            {
-                magazineBehaviour.SetAmmuniationTotal(Mathf.Clamp(magazineBehaviour.GetAmmunitionTotal() - magDifference, 0, magazineBehaviour.GetAmmunitionTotal()));
-                ammunitionCurrent = magazineBehaviour.GetMaxAmmuniationPerMag();
+                magazineBehaviour.SetAmmuniationTotal(magazineBehaviour.GetAmmunitionTotal() - reloadAmount);
+                ammunitionCurrent += reloadAmount;
             }
-
-            else
-            {
-                int differenceLeft = magazineBehaviour.GetAmmunitionTotal() - (magazineBehaviour.GetMaxAmmuniationPerMag() - ammunitionCurrent);
-
-                ammunitionCurrent +=  magazineBehaviour.GetAmmunitionTotal();
-                magazineBehaviour.SetAmmuniationTotal(Mathf.Clamp(differenceLeft, 0, 9999));
-            }
-            }
-
         }
 
         public override void EjectCasing()
