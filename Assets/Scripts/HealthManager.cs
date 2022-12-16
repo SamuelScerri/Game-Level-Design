@@ -18,6 +18,8 @@ public class HealthManager : MonoBehaviour
 
 	private void Start()
 	{
+		interactor = GetComponent<Interactor>();
+
 		_healthUI = Instantiate(_healthPrefab) as GameObject;
 		UpdateUI();
 	}
