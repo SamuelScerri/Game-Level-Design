@@ -10,7 +10,7 @@ public class Interactor : MonoBehaviour
 	public PauseManager pauseManager;
 
 	[SerializeField]
-	private float _pointsObtained;
+	public float _pointsObtained;
 
 	[SerializeField]
 	private float _interactableDistance;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class HealthManager : MonoBehaviour
 	public int _currentHealth;
 
 	public GameObject _healthUI;
+
+	private Interactor interactor;
 
 	private void Start()
 	{
@@ -28,6 +31,7 @@ public class HealthManager : MonoBehaviour
 	private void TakeDamage(int amount)
 	{
 		_currentHealth = Mathf.Clamp(_currentHealth - amount, 0, 100);
+		/*if(_currentHealth <= 0){ SceneManager.LoadScene("YouLose"); }*/
 		UpdateUI();
 	}
 
@@ -40,5 +44,6 @@ public class HealthManager : MonoBehaviour
 	private void UpdateUI()
 	{
 		_healthUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Health: " + _currentHealth.ToString());
-	}
+        _healthUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().SetText("Score: " + interactor._pointsObtained.ToString());
+    }
 }

@@ -3119,7 +3119,8 @@ MonoBehaviour:
   audioClipRunning: {fileID: 8300000, guid: d2add02f58e61e640aba3ae9110591cb, type: 3}
   speedWalking: 4
   speedRunning: 6.8
-  pauseManager: {fileID: 0}
+  pauseManager: {fileID: 5341712331378120414, guid: 1cfd28d46bca0dd4884ce6988eee22f1,
+    type: 3}
 --- !u!114 &5725166946916116957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3137,7 +3138,9 @@ MonoBehaviour:
   dampTimeLocomotion: 0.1
   dampTimeAiming: 0.3
   characterAnimator: {fileID: 5725166945979664319}
-  pauseManager: {fileID: 0}
+  equippedWeaponMagazine: {fileID: 0}
+  pauseManager: {fileID: 5341712331378120414, guid: 1cfd28d46bca0dd4884ce6988eee22f1,
+    type: 3}
 --- !u!114 &5725166946916116956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3520,6 +3523,7 @@ MonoBehaviour:
   _healthPrefab: {fileID: 7282234188205932835, guid: 89066d18969514114a9f83fb59845da9,
     type: 3}
   _currentHealth: 0
+  _healthUI: {fileID: 0}
 --- !u!1 &5725166947016437052
 GameObject:
   m_ObjectHideFlags: 0
