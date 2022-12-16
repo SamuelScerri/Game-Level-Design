@@ -16,6 +16,8 @@ public class CutsceneManager : MonoBehaviour
 
 	private Image _transitionImage;
 
+	private GameObject _player;
+
 	private void Start()
 	{
 		_animation = GetComponent<Animation>();
@@ -25,6 +27,8 @@ public class CutsceneManager : MonoBehaviour
 		_transitionImage.color = Color.black;
 
 		_camera.SetActive(false);
+
+		_player = GameObject.FindWithTag("Player");
 	}
 
 	public void StartCutscene()
@@ -47,12 +51,16 @@ public class CutsceneManager : MonoBehaviour
 		if (_transitionImage.color.a >= .99f)
 		{
 			if (_startedCutscene)
+			{
+				_player.SetActive(true);
 				SceneManager.LoadScene(_level, LoadSceneMode.Single);
+			}
+				
 
 			else
 			{
 				//Remove Player & UI
-				Destroy(GameObject.FindWithTag("Player"));
+				_player.SetActive(false);
 				
 				_startedCutscene = true;
 				_startedTransition = false;

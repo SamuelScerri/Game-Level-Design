@@ -38,6 +38,7 @@ public class Interactor : MonoBehaviour
 	private void Start()
 	{
 		_popupObjectInstance = Instantiate(_popupObject);
+		//DontDestroyOnLoad(this.gameObject);
 	}
 
 	void Update()

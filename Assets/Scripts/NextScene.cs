@@ -6,9 +6,12 @@ public class NextScene : MonoBehaviour
 {
     public GameObject nextSceneCollider;
     public List<GameObject> enemy = new List<GameObject>();
+    public GameObject[] enemyArray;
     // Start is called before the first frame update
     void Start()
     {
+        enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
+        enemy.AddRange(enemyArray);
         nextSceneCollider.SetActive(false);
     }
 
