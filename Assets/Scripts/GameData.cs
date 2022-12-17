@@ -6,16 +6,16 @@ using UnityEditor;
 
 public abstract class GameData : MonoBehaviour
 {
-    private static float _score;
-    private static float _highScore;
+    private static int _score;
+    private static int _highScore;
 
-    public static float score
+    public static int score
     {
         get { return _score; }
         set { _score = value; }
     }
 
-    public static float highScore
+    public static int highScore
     {
         get { return _highScore; }
         set { _highScore = value; }

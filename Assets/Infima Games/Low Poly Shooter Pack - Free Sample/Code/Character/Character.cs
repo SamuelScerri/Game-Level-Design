@@ -319,8 +319,8 @@ namespace InfimaGames.LowPolyShooterPack
                 #region Animation
 
                 //Get the name of the animation state to play, which depends on weapon settings, and ammunition!
-				Debug.Log("Ammunition Current: " + equippedWeapon.GetAmmunitionCurrent());
-				Debug.Log("Ammunition Total: " + equippedWeapon.GetAmmunitionTotal());
+				/*Debug.Log("Ammunition Current: " + equippedWeapon.GetAmmunitionCurrent());
+				Debug.Log("Ammunition Total: " + equippedWeapon.GetAmmunitionTotal());*/
 
 				if (equippedWeapon.GetAmmunitionTotal() != 0)
 				{

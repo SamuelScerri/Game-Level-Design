@@ -9,7 +9,7 @@ public class Interactable : MonoBehaviour
 	public bool activated;
 
 	[SerializeField]
-	public float pointsNeededToExecute;
+	public int pointsNeededToExecute;
 
 	[SerializeField]
 	public UnityEvent executeEvent;

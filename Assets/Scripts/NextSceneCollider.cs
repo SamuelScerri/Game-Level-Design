@@ -9,7 +9,7 @@ public class NextSceneCollider : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Student1-Level1")
         {
-            SceneManager.LoadScene("Student1-Level1Boss");
+            SceneManager.LoadScene("YouWin");
         }
     }
 }

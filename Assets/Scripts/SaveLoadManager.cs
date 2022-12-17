@@ -13,22 +13,18 @@ public class SaveLoadManager : MonoBehaviour
     public void SaveMyData()
     {
 
-        myserializedData.ser_highscore = GameData.highScore;
-
-        string jsontosave = JsonUtility.ToJson(myserializedData);
-        Debug.Log(jsontosave);
-        PlayerPrefs.SetString("SnowballData", jsontosave);
+        
+        PlayerPrefs.SetString("ScoreData", GameData.highScore.ToString());
     }
 
 
     public void LoadMyData()
     {
         string loadedjson;
-        if (PlayerPrefs.HasKey("SnowballData"))
+        if (PlayerPrefs.HasKey("ScoreData"))
         {
-            loadedjson = PlayerPrefs.GetString("SnowballData");
-            myserializedData = JsonUtility.FromJson<SerializedData>(loadedjson);
-            GameData.highScore = myserializedData.ser_highscore;
+            loadedjson = PlayerPrefs.GetString("ScoreData");
+            Debug.Log(loadedjson);
         }
     }
 }

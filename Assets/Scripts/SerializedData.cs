@@ -5,5 +5,5 @@ using UnityEngine;
 [System.Serializable]
 public class SerializedData
 {
-    public float ser_highscore;
+    public int ser_highscore;
 }

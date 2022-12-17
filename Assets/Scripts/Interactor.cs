@@ -41,7 +41,7 @@ public class Interactor : MonoBehaviour
 
 	private void Start()
 	{
-		_popupObjectInstance = Instantiate(_popupObject);
+        _popupObjectInstance = Instantiate(_popupObject);
 		healthManager = GetComponent<HealthManager>();
 		//DontDestroyOnLoad(this.gameObject);
 	}
@@ -83,12 +83,12 @@ public class Interactor : MonoBehaviour
         }
 	}
 
-	public void IncreaseScore(float scorevalue)
+	public void IncreaseScore(int scorevalue)
 	{
         GameData.score += scorevalue;
 		_pointsObtained += scorevalue;
 		/*Debug.Log("Score: " + GameData.score);*/
-		Debug.Log("Points Obtained: " + _pointsObtained);
+		/*Debug.Log("Points Obtained: " + _pointsObtained);*/
 		healthManager.UpdateUI();
 	}
 
