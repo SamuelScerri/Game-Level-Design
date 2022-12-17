@@ -5,9 +5,19 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int HP = 100;
-    public Animator animator;
+    private Animator animator;
     public GameObject[] itemDrops;
-    public Interactor interactor;
+    private Interactor interactor;
+
+    public void Start()
+    {
+        animator = GetComponent<Animator>();
+
+        GameObject player = GameObject.FindWithTag("Player");
+
+        interactor = player.GetComponent<Interactor>();
+    }
+
     public void TakeDamage(int damageAmount)
     {
         HP -= damageAmount;
