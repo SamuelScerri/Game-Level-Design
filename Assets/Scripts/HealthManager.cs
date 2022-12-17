@@ -21,6 +21,7 @@ public class HealthManager : MonoBehaviour
 		interactor = GetComponent<Interactor>();
         _healthUI = Instantiate(_healthPrefab) as GameObject;
 		UpdateUI();
+		DontDestroyOnLoad(_healthUI);
     }
 
 	private void SetHealth(int amount)
