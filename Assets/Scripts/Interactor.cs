@@ -4,6 +4,8 @@ using System;
 using UnityEngine;
 using TMPro;
 using InfimaGames.LowPolyShooterPack;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Interactor : MonoBehaviour
 {
@@ -34,6 +36,9 @@ public class Interactor : MonoBehaviour
 
 	[SerializeField]
 	public Inventory weaponInventory;
+
+	[SerializeField]
+	public HealthManager healthManager;
 
 	private void Start()
 	{
@@ -66,14 +71,24 @@ public class Interactor : MonoBehaviour
 
                 if (Input.GetKeyDown("e") && _pointsObtained >= reference.pointsNeededToExecute && !reference.activated)
                 {
+					_pointsObtained = _pointsObtained - reference.pointsNeededToExecute;
                     reference.executeEvent.Invoke();
                     reference.activated = true;
+                    healthManager.UpdateUI();
                 }
             }
-
             else _popupObjectInstance.SetActive(false);
             _currentInteractableItem = null;
         }
+	}
+
+	public void IncreaseScore(float scorevalue)
+	{
+        GameData.score += scorevalue;
+		_pointsObtained += scorevalue;
+		/*Debug.Log("Score: " + GameData.score);*/
+		Debug.Log("Points Obtained: " + _pointsObtained);
+		healthManager.UpdateUI();
 	}
 
 	private void OnTriggerEnter(Collider other)
@@ -90,6 +105,7 @@ public class Interactor : MonoBehaviour
             interactable.weaponToAdd.transform.parent = inventory.transform;
             weaponInventory.Init(0);
             weaponInventory.weapons[0].gameObject.SetActive(true);
+			healthManager.UpdateUI();
         }
     }
 }

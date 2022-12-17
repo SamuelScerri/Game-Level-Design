@@ -7,11 +7,14 @@ public class Enemy : MonoBehaviour
     public int HP = 100;
     public Animator animator;
     public GameObject[] itemDrops;
+    public Interactor interactor;
     public void TakeDamage(int damageAmount)
     {
         HP -= damageAmount;
+        interactor.IncreaseScore(10);
         if(HP <= 0)
         {
+            interactor.IncreaseScore(50);
             //Play Death Animation
             animator.SetTrigger("die");
             GetComponent<Collider>().enabled = false;

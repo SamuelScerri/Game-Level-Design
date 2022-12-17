@@ -202,6 +202,8 @@ MonoBehaviour:
   damageAmount: 20
   pauseManager: {fileID: 5341712331378120414, guid: 1cfd28d46bca0dd4884ce6988eee22f1,
     type: 3}
+  interactor: {fileID: 1963283756679996382, guid: 07789264cd801704cb2ede301f74782d,
+    type: 3}
 --- !u!1 &1231345400216816
 GameObject:
   m_ObjectHideFlags: 0

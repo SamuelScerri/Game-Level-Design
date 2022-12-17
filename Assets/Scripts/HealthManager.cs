@@ -43,7 +43,7 @@ public class HealthManager : MonoBehaviour
 		UpdateUI();
 	}
 
-	private void UpdateUI()
+	public void UpdateUI()
 	{
 		_healthUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Health: " + _currentHealth.ToString());
         _healthUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().SetText("Score: " + interactor._pointsObtained.ToString());
