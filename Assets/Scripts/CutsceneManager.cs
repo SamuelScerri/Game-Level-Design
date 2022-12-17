@@ -35,7 +35,7 @@ public class CutsceneManager : MonoBehaviour
 	{
 		_startedTransition = true;
 
-		Destroy(GameObject.FindWithTag("UI"));
+		//Destroy(GameObject.FindWithTag("UI"));
 	}
 
 	public void Update()
