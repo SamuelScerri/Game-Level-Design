@@ -11,8 +11,8 @@ public class PlayerSpawnManager : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
 
         if (player == null)
-            Instantiate(playerPrefab);
+            player = Instantiate(playerPrefab) as GameObject;
 
-        else player.transform.position = transform.position;
+        player.transform.position = transform.position;
     }
 }
