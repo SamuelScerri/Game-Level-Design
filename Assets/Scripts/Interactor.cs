@@ -43,7 +43,15 @@ public class Interactor : MonoBehaviour
 	{
 		_popupObjectInstance = Instantiate(_popupObject);
 		healthManager = GetComponent<HealthManager>();
-		//DontDestroyOnLoad(this.gameObject);
+		DontDestroyOnLoad(this.gameObject);
+
+		//Set All UI Elements To Never Destroy
+		GameObject[] uiElements = GameObject.FindGameObjectsWithTag("UI");
+
+		foreach (GameObject element in uiElements)
+		{
+			DontDestroyOnLoad(element);
+		}
 	}
 
 	void Update()
