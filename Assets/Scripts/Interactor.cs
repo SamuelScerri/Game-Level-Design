@@ -37,12 +37,12 @@ public class Interactor : MonoBehaviour
 	[SerializeField]
 	public Inventory weaponInventory;
 
-	[SerializeField]
-	public HealthManager healthManager;
+	private HealthManager healthManager;
 
 	private void Start()
 	{
 		_popupObjectInstance = Instantiate(_popupObject);
+		healthManager = GetComponent<HealthManager>();
 		//DontDestroyOnLoad(this.gameObject);
 	}
 
