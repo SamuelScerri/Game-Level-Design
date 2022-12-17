@@ -71,6 +71,7 @@ public class Interactor : MonoBehaviour
 
                 if (Input.GetKeyDown("e") && _pointsObtained >= reference.pointsNeededToExecute && !reference.activated)
                 {
+					GameData.score = GameData.score - reference.pointsNeededToExecute;
 					_pointsObtained = _pointsObtained - reference.pointsNeededToExecute;
                     reference.executeEvent.Invoke();
                     reference.activated = true;

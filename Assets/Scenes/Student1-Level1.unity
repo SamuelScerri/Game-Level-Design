@@ -17701,6 +17701,11 @@ PrefabInstance:
       propertyPath: _healthUI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5725166946916116931, guid: f4ffe0a3d63bc2042835373150d1b432,
+        type: 3}
+      propertyPath: _currentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5725166946916116950, guid: f4ffe0a3d63bc2042835373150d1b432,
         type: 3}
       propertyPath: m_RootOrder

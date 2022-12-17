@@ -30,7 +30,7 @@ public class HealthManager : MonoBehaviour
 		UpdateUI();
 	}
 
-	private void TakeDamage(int amount)
+	public void TakeDamage(int amount)
 	{
 		_currentHealth = Mathf.Clamp(_currentHealth - amount, 0, 100);
 		/*if(_currentHealth <= 0){ SceneManager.LoadScene("YouLose"); }*/

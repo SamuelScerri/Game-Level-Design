@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     public GameObject[] itemDrops;
     private Interactor interactor;
+    private HealthManager healthManager;
 
     public void Start()
     {
@@ -16,6 +17,8 @@ public class Enemy : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
 
         interactor = player.GetComponent<Interactor>();
+
+        healthManager = player.GetComponent<HealthManager>();
     }
 
     public void TakeDamage(int damageAmount)
@@ -35,6 +38,10 @@ public class Enemy : MonoBehaviour
             //Play Damage Animation
             animator.SetTrigger("damage");
         }
+    }
+
+    public void GiveDamage(int damage) {
+        healthManager.TakeDamage(damage);
     }
 
     private void ItemDrop()
