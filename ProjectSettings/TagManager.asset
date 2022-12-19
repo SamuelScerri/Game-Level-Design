@@ -27,7 +27,7 @@ TagManager:
   - UI
   - Interactable
   - 
-  - Wall
+  - Enemy
   - First Person View
   - Character
   - Post Processing
