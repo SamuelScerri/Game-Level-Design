@@ -11,13 +11,12 @@ TagManager:
   - Concrete
   - ExplosiveBarrel
   - Target
-  - GasTank
-  - Wood
   - Cutscene
   - UI
   - Enemy
   - Waypoint
   - Waypoint2
+  - TargetCanvas
   layers:
   - Default
   - TransparentFX

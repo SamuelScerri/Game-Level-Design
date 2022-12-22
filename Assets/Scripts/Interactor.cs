@@ -41,6 +41,7 @@ public class Interactor : MonoBehaviour
 
 	private void Start()
 	{
+		interactable= GameObject.Find("WallBuy").GetComponent<Interactable>();
         _popupObjectInstance = Instantiate(_popupObject);
 		healthManager = GetComponent<HealthManager>();
 		DontDestroyOnLoad(this.gameObject);
