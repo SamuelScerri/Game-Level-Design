@@ -132,20 +132,11 @@ namespace InfimaGames.LowPolyShooterPack
         #endregion
 
         #region UNITY
+
+
         
         protected override void Awake()
         {
-            // If there is an instance, and it's not me, delete myself.
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this);
-                Instance.magazineBehaviour.SetAmmuniationTotal(+50);
-            }
-            else
-            {
-                Instance = this;
-            }
-
             //Get Animator.
             animator = GetComponent<Animator>();
             //Get Attachment Manager.
