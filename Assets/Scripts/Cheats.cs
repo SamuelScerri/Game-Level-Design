@@ -10,25 +10,27 @@ public class Cheats : MonoBehaviour
     public List<GameObject> enemy = new List<GameObject>();
     public PauseManager pauseManager;
     public Character character;
+    public GameObject cheatCanvas;
     // Start is called before the first frame update
     void Start()
     {
         character = GameObject.Find("Player").GetComponent<Character>();
         enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
+        cheatCanvas.SetActive(false);
         enemy.AddRange(enemyArray);
     }
 
     private void CheatCanvas()
     {
         pauseManager._isPaused= true;
-        GameObject.Find("CheatCanvas").SetActive(true);
+        cheatCanvas.SetActive(true);
     }
 
     public void KillAllEnemies()
     {
         pauseManager._isPaused = false;
         for(int i = 0; i < enemyArray.Length; i++) { enemyArray[i].gameObject.GetComponent<Enemy>().Die(); }
-        GameObject.Find("CheatCanvas").SetActive(false);
+        cheatCanvas.SetActive(false);
     }
 
     public void SelfDestroy() { SceneManager.LoadScene("YouLose"); }
@@ -36,7 +38,7 @@ public class Cheats : MonoBehaviour
     public void IncreaseAmmo()
     {
         pauseManager._isPaused = false;
-        GameObject.Find("CheatCanvas").SetActive(false);
+        cheatCanvas.SetActive(false);
         character.equippedWeaponMagazine.SetAmmuniationTotal(character.equippedWeaponMagazine.GetAmmunitionTotal() + 100);
     }
 

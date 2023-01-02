@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class NextScene : MonoBehaviour
@@ -12,6 +13,9 @@ public class NextScene : MonoBehaviour
     {
         enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         enemy.AddRange(enemyArray);
+        
+        GameObject.Find("ObjectiveText").GetComponent<TextMeshProUGUI>().SetText("");
+        GameObject.Find("ObjectiveTitle").GetComponent<TextMeshProUGUI>().SetText("");
         /*nextSceneCollider.SetActive(false);*/
     }
 
@@ -19,9 +23,28 @@ public class NextScene : MonoBehaviour
     void Update()
     {
         enemy.RemoveAll(GameObject => GameObject == null);
-        /*if(enemy.Count == 0)
+        
+        if (enemy.Count == 0)
         {
-            nextSceneCollider.SetActive(true);
-        }*/
+            if (Input.GetKey(KeyCode.Tab))
+            {
+                GameObject.Find("ObjectiveText").GetComponent<TextMeshProUGUI>().SetText("Go to the next objective");
+            }
+            else
+            {
+                GameObject.Find("ObjectiveText").GetComponent<TextMeshProUGUI>().SetText("");
+            }
+                
+        }
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            GameObject.Find("ObjectiveTitle").GetComponent<TextMeshProUGUI>().SetText("Objectives:");
+            GameObject.Find("ObjectiveText").GetComponent<TextMeshProUGUI>().SetText("Kill All Zombies (" + enemy.Count + "/" + enemyArray.Length + ")");
+        }
+        else
+        {
+            GameObject.Find("ObjectiveText").GetComponent<TextMeshProUGUI>().SetText("");
+            GameObject.Find("ObjectiveTitle").GetComponent<TextMeshProUGUI>().SetText("");
+        }
     }
 }
