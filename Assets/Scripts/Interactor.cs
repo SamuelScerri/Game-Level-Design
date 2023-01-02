@@ -109,13 +109,13 @@ public class Interactor : MonoBehaviour
 
 	public void WallBuy()
     {
-		if(pauseManager._isPaused == false)
-		{
+        if (pauseManager._isPaused == false)
+        {
             interactable.weaponToAdd.SetActive(false);
-            interactable.weaponToAdd.transform.parent = inventory.transform;
+			Instantiate(interactable.weaponToAdd, inventory.transform);
             weaponInventory.Init(0);
             weaponInventory.weapons[0].gameObject.SetActive(true);
-			healthManager.UpdateUI();
+            healthManager.UpdateUI();
         }
     }
 }

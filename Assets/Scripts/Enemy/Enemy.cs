@@ -21,23 +21,33 @@ public class Enemy : MonoBehaviour
         healthManager = player.GetComponent<HealthManager>();
     }
 
+    public void SetHealth(int amount)
+    {
+        HP = amount;
+    }
+
     public void TakeDamage(int damageAmount)
     {
         HP -= damageAmount;
         interactor.IncreaseScore(10);
         if(HP <= 0)
         {
-            interactor.IncreaseScore(50);
-            //Play Death Animation
-            animator.SetTrigger("die");
-            GetComponent<Collider>().enabled = false;
-            Destroy(gameObject, 5);
-            ItemDrop();
+            Die();
         }
         else{
             //Play Damage Animation
             animator.SetTrigger("damage");
         }
+    }
+
+    public void Die()
+    {
+        interactor.IncreaseScore(50);
+        //Play Death Animation
+        animator.SetTrigger("die");
+        GetComponent<Collider>().enabled = false;
+        Destroy(gameObject, 5);
+        ItemDrop();
     }
 
     public void GiveDamage(int damage) {
