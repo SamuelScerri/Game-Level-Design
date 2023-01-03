@@ -112,9 +112,17 @@ public class Interactor : MonoBehaviour
         if (pauseManager._isPaused == false)
         {
             interactable.weaponToAdd.SetActive(false);
-			Instantiate(interactable.weaponToAdd, inventory.transform);
-            weaponInventory.Init(0);
-            weaponInventory.weapons[0].gameObject.SetActive(true);
+			if(inventory.transform.childCount != 2) {
+				Instantiate(interactable.weaponToAdd, inventory.transform);
+                weaponInventory.Init(0);
+                weaponInventory.weapons[0].gameObject.SetActive(true);
+            }
+			else
+			{
+                GameObject.FindWithTag("Mag").GetComponent<Magazine>().AddAmmuniationTotal(50);
+            }
+			
+            
             healthManager.UpdateUI();
         }
     }

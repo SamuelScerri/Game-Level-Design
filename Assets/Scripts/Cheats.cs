@@ -21,14 +21,14 @@ public class Cheats : MonoBehaviour
     private void CheatCanvas()
     {
         pauseManager._isPaused= true;
-        GameObject.Find("CheatCanvas").SetActive(true);
+        GameObject.Find("CheatCanvas").GetComponent<Canvas>().enabled = true;
     }
 
     public void KillAllEnemies()
     {
         pauseManager._isPaused = false;
         for(int i = 0; i < enemyArray.Length; i++) { enemyArray[i].gameObject.GetComponent<Enemy>().Die(); }
-        GameObject.Find("CheatCanvas").SetActive(false);
+        GameObject.Find("CheatCanvas").GetComponent<Canvas>().enabled = false;
     }
 
     public void SelfDestroy() { SceneManager.LoadScene("YouLose"); }
@@ -36,7 +36,7 @@ public class Cheats : MonoBehaviour
     public void IncreaseAmmo()
     {
         pauseManager._isPaused = false;
-        GameObject.Find("CheatCanvas").SetActive(false);
+        GameObject.Find("CheatCanvas").GetComponent<Canvas>().enabled = false;
         character.equippedWeaponMagazine.SetAmmuniationTotal(character.equippedWeaponMagazine.GetAmmunitionTotal() + 100);
     }
 

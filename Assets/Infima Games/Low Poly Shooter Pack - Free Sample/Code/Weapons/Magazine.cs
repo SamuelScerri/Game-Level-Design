@@ -33,6 +33,11 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         public override int GetAmmunitionTotal() => ammunitionTotal;
         public override int GetMaxAmmuniationPerMag() => maxAmmunitionPerMag;
+
+        public void AddAmmuniationTotal(int amount)
+        {
+            ammunitionTotal += amount;
+        }
         public override void SetAmmuniationTotal(int amount)
         {
             ammunitionTotal = amount;
