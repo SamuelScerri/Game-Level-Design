@@ -15,6 +15,7 @@ public class NextScene : MonoBehaviour
     {
         targetCanvas = GameObject.Find("TargetCanvas").GetComponent<Canvas>();
         target = GameObject.Find("Target");
+        nextSceneCollider = GameObject.Find("Target");
         enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         enemy.AddRange(enemyArray);
         nextSceneCollider.SetActive(false);

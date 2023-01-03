@@ -23,7 +23,7 @@ public class NextSceneCollider : MonoBehaviour
         camera.GetComponent<MissionWaypoint>().meter = camera.GetComponent<MissionWaypoint>().image.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
     }
 
-    private void Update()
+    /*private void Update()
     {
         camera.GetComponent<MissionWaypoint>().enemy.RemoveAll(GameObject => GameObject == null);
         if (camera.GetComponent<MissionWaypoint>().enemy.Count == 0)
@@ -36,7 +36,7 @@ public class NextSceneCollider : MonoBehaviour
             camera.GetComponent<MissionWaypoint>().target.SetActive(false);
             camera.GetComponent<MissionWaypoint>().targetCanvas.gameObject.SetActive(false);
         }
-    }
+    }*/
     void OnCollisionEnter(Collision collision)
     {
         if (SceneManager.GetActiveScene().name == "Student1-Level1")

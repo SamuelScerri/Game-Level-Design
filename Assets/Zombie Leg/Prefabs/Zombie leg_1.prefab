@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 5313634884459088467}
   - component: {fileID: 1642901980}
   - component: {fileID: 1642901979}
-  - component: {fileID: 41125126974974245}
   m_Layer: 8
   m_Name: Zombie leg_1
   m_TagString: Enemy
@@ -355,25 +354,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   itemDrops: []
---- !u!320 &41125126974974245
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5313634884459088428}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: cea4106ba2755484e9e5c4d8d46062c3, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 8353188923429185335, guid: cea4106ba2755484e9e5c4d8d46062c3, type: 2}
-    value: {fileID: 5313634884459674715}
-  m_ExposedReferences:
-    m_References: []
 --- !u!1 &5313634884459674709
 GameObject:
   m_ObjectHideFlags: 0
