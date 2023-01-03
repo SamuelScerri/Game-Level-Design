@@ -15,14 +15,12 @@ public class MissionWaypoint : MonoBehaviour
     public List<GameObject> enemy = new List<GameObject>();
     public GameObject[] enemyArray;
 
-    public void Start()
+    public void Awake()
     {
         targetCanvas = GameObject.Find("TargetCanvas").GetComponent<Canvas>();
         target = GameObject.Find("Target");
         image = targetCanvas.transform.GetChild(0).GetComponent<Image>();
         meter = image.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        target.SetActive(false);
-        targetCanvas.gameObject.SetActive(false);
     }
 
     
@@ -41,18 +39,13 @@ public class MissionWaypoint : MonoBehaviour
             meter = image.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             
         }*/
-        
+        /*target.SetActive(false);
+        targetCanvas.gameObject.SetActive(false);
         if (enemy.Count == 0)
         {
             target.SetActive(true);
             targetCanvas.gameObject.SetActive(true);
-        }
-        else
-        {
-            target.SetActive(false);
-            targetCanvas.gameObject.SetActive(false);
-        }
-
+        }*/
 
         float minX = image.GetPixelAdjustedRect().width / 2;
         float maxX = Screen.width - minX;

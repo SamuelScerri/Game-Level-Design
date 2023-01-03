@@ -101,11 +101,11 @@ public class Interactor : MonoBehaviour
 		healthManager.UpdateUI();
 	}
 
-	private void OnTriggerEnter(Collider other)
+	/*private void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Cutscene")
 			other.GetComponent<CutsceneManager>().StartCutscene();
-	}
+	}*/
 
 	public void WallBuy()
     {

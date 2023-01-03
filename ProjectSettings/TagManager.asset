@@ -18,6 +18,7 @@ TagManager:
   - Waypoint2
   - TargetCanvas
   - Weapon
+  - Mag
   layers:
   - Default
   - TransparentFX

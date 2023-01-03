@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CutsceneManager : MonoBehaviour
 {
-	[SerializeField]
+	/*[SerializeField]
 	private int _level;
 	private bool _startedCutscene;
 	private bool _startedTransition;
@@ -14,24 +14,60 @@ public class CutsceneManager : MonoBehaviour
 	private Animation _animation;
 	private GameObject _camera;
 
-	private Image _transitionImage;
+	private Image _transitionImage;*/
 
 	private GameObject _player;
+	private GameObject canvas;
+    private GameObject healthCanvas;
 
-	private void Start()
+    private void Start()
 	{
-		_animation = GetComponent<Animation>();
+		/*_animation = GetComponent<Animation>();
 		_camera = transform.GetChild(0).gameObject;
 
 		_transitionImage = transform.GetChild(1).GetChild(0).GetComponent<Image>();
 		_transitionImage.color = Color.black;
 
-		_camera.SetActive(false);
-
+		_camera.SetActive(false);*/
+		healthCanvas = GameObject.Find("Health(Clone)");
+		healthCanvas.SetActive(false);
 		_player = GameObject.FindWithTag("Player");
-	}
+		_player.SetActive(false);
+		canvas = GameObject.Find("P_LPSP_UI_Canvas(Clone)");
+        canvas.SetActive(false);
 
-	public void StartCutscene()
+
+        if (SceneManager.GetActiveScene().name == "Student1-Level1BossCutscene")
+		{
+			StartCoroutine(EndLevel1BossCutscene());
+		}
+		else if (SceneManager.GetActiveScene().name == "Lvl2Cutscene")
+        {
+            StartCoroutine(EndLevel2Cutscene());
+        }
+    }
+
+	public IEnumerator EndLevel1BossCutscene()
+	{
+        
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Student1-Level1Boss");
+		_player.SetActive(true);
+        canvas.SetActive(true);
+		healthCanvas.SetActive(true);
+    }
+
+    public IEnumerator EndLevel2Cutscene()
+    {
+
+        yield return new WaitForSeconds(10);
+        SceneManager.LoadScene("Lvl2");
+        _player.SetActive(true);
+        canvas.SetActive(true);
+        healthCanvas.SetActive(true);
+    }
+
+    /*public void StartCutscene()
 	{
 		_startedTransition = true;
 
@@ -69,5 +105,5 @@ public class CutsceneManager : MonoBehaviour
 				_animation.Play();
 			}
 		}
-	}
+	}*/
 }
