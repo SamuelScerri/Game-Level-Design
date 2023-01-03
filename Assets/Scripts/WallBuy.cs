@@ -7,11 +7,11 @@ public class WallBuy : MonoBehaviour
 	private GameObject _player;
 	private Interactable _interactor;
 
-	private void Start()
+	/*private void Start()
 	{
 		_player = GameObject.FindWithTag("Player");
 		_interactor = GetComponent<Interactable>();
-
-		_interactor.executeEvent.AddListener(_player.GetComponent<Interactor>().WallBuy);
-	}
+		_interactor.weaponToAdd  = GameObject.FindGameObjectWithTag("Weapon");
+        _interactor.executeEvent.AddListener(_player.GetComponent<Interactor>().WallBuy);
+	}*/
 }

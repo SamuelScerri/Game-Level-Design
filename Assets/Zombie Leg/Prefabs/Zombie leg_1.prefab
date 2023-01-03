@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634883220273236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Leg1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634883302897319}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Leg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634883523404993}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Eye1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634883583807869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634883602597040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Eye3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634883719326113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Sheo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634883874873871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Leg3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884050546853}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Eye3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884335094131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,10 +301,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884459088467}
-  - component: {fileID: 5313634884459088466}
-  m_Layer: 0
+  - component: {fileID: 1642901980}
+  - component: {fileID: 1642901979}
+  - component: {fileID: 41125126974974245}
+  m_Layer: 8
   m_Name: Zombie leg_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,15 +320,15 @@ Transform:
   m_GameObject: {fileID: 5313634884459088428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5313634884459674708}
   - {fileID: 5313634884498118738}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5313634884459088466
+--- !u!65 &1642901980
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,8 +339,41 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.0508306, y: 8.074034, z: 2.6865706}
-  m_Center: {x: -0.03446581, y: 4.8782997, z: 0.7445581}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1642901979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313634884459088428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ef859cdc73fa147ba15318a1908977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  itemDrops: []
+--- !u!320 &41125126974974245
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313634884459088428}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: cea4106ba2755484e9e5c4d8d46062c3, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 8353188923429185335, guid: cea4106ba2755484e9e5c4d8d46062c3, type: 2}
+    value: {fileID: 5313634884459674715}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &5313634884459674709
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,9 +384,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5313634884459674708}
   - component: {fileID: 5313634884459674715}
-  m_Layer: 0
+  - component: {fileID: 715928603}
+  - component: {fileID: 715928604}
+  - component: {fileID: 715928605}
+  m_Layer: 8
   m_Name: Joints
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -363,8 +401,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5313634884459674709}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.09432133, y: 5.141519, z: 0.53649557}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -381,17 +419,66 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5313634884459674709}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c344d2f48d3346468ab3144515050c0, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 2187bf69f86cf8d44aea42950d4fa8f3, type: 3}
+  m_Controller: {fileID: 9100000, guid: 3b21af5987626e34298e3f9acaa0bbe1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &715928603
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313634884459674709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 7, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &715928604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313634884459674709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ef859cdc73fa147ba15318a1908977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 200
+  itemDrops: []
+--- !u!195 &715928605
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5313634884459674709}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 8
+  m_BaseOffset: 4.1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &5313634884498118739
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,9 +489,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5313634884498118738}
   - component: {fileID: 5313634884498118737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -506,7 +593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884575793759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Eye2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884580629142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Eye2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884629617163}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Eye4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +688,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884648646722}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884666993348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_Eye1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884674335556}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Leg2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884804870429}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Eye4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +814,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884925322327}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Shoe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,9 +846,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634884943175321}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Leg1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -791,7 +878,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634885094645233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R_SHoe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +909,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313634885333096000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: L_Shoe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
