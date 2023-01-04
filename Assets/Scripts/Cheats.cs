@@ -27,7 +27,7 @@ public class Cheats : MonoBehaviour
 
     public void KillAllEnemies()
     {
-        for(int i = 0; i < enemyArray.Length; i++) { enemyArray[i].gameObject.GetComponent<Enemy>().TakeDamage(90000); }
+        for(int i = 0; i < enemyArray.Length; i++) { enemy[i].gameObject.GetComponent<Enemy>().Die(); }
         cheatCanvas.enabled = false;
     }
 

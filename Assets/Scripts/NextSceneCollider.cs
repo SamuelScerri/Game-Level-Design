@@ -47,5 +47,9 @@ public class NextSceneCollider : MonoBehaviour
         {
             SceneManager.LoadScene("Lvl2Cutscene");
         }
+        else if (SceneManager.GetActiveScene().name == "Lvl2")
+        {
+            SceneManager.LoadScene("Level3");
+        }
     }
 }
