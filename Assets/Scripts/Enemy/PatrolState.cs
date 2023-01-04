@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class PatrolState : StateMachineBehaviour
 {
     float timer;
-    List<Transform> waypoints = new List<Transform>();
+    GameObject[] waypoints;
     NavMeshAgent agent;
 
     Transform player;
@@ -20,18 +20,19 @@ public class PatrolState : StateMachineBehaviour
         agent = animator.GetComponent<NavMeshAgent>();
         agent.speed = 1.5f;
         timer = 0;
-        GameObject go = GameObject.FindGameObjectWithTag("Waypoint");
+        waypoints = GameObject.FindGameObjectsWithTag("Waypoint");
+        /*GameObject go = GameObject.FindGameObjectWithTag("Waypoint");
         foreach (Transform t in go.transform)
-            waypoints.Add(t);
+            waypoints.Add(t);*/
 
-        agent.SetDestination(waypoints[Random.Range(0, waypoints.Count)].position);
+        agent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].transform.position);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if(agent.remainingDistance <= agent.stoppingDistance)
-            agent.SetDestination(waypoints[Random.Range(0, waypoints.Count)].position);
+            agent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].transform.position);
 
         timer += Time.deltaTime;
         if (timer > 10)

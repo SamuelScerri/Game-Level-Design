@@ -492,3 +492,5 @@ MonoBehaviour:
   - {fileID: 5008825043329289094, guid: f3d800316106b264e892269c75664071, type: 3}
   - {fileID: 2403356357806753994, guid: 6000cb0256963bf459756ea4ac7cd5df, type: 3}
   - {fileID: 0}
+  walk: {fileID: 0}
+  run: {fileID: 0}

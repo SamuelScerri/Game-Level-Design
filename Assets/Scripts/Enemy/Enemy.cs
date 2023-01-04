@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] itemDrops;
     private Interactor interactor;
     private HealthManager healthManager;
+    public AudioSource walk, run;
 
     public void Start()
     {
@@ -38,6 +39,24 @@ public class Enemy : MonoBehaviour
             //Play Damage Animation
             animator.SetTrigger("damage");
         }
+    }
+
+    public void StopFootsteps()
+    {
+        run.Stop();
+        walk.Stop();
+    }
+
+    public void FootstepsWalk()
+    {
+        walk.Play();
+        run.Stop();
+    }
+
+    public void FootstepsRun()
+    {
+        run.Play();
+        walk.Stop();
     }
 
     public void Die()
