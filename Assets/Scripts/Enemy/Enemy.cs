@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] itemDrops;
     private Interactor interactor;
     private HealthManager healthManager;
-    public AudioSource walk, run;
+    public AudioSource walk, run, attack, die;
 
     public void Start()
     {
@@ -61,6 +61,9 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        run.Stop();
+        walk.Stop();
+        die.Play();
         interactor.IncreaseScore(50);
         //Play Death Animation
         animator.SetTrigger("die");
@@ -70,6 +73,9 @@ public class Enemy : MonoBehaviour
     }
 
     public void GiveDamage(int damage) {
+        run.Stop();
+        walk.Stop();
+        attack.Play();
         healthManager.TakeDamage(damage);
     }
 

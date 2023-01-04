@@ -22,14 +22,12 @@ public class Cheats : MonoBehaviour
 
     private void CheatCanvas()
     {
-        pauseManager._isPaused= true;
         cheatCanvas.enabled = true;
     }
 
     public void KillAllEnemies()
     {
-        pauseManager._isPaused = false;
-        for(int i = 0; i < enemyArray.Length; i++) { enemyArray[i].gameObject.GetComponent<Enemy>().Die(); }
+        for(int i = 0; i < enemyArray.Length; i++) { enemyArray[i].gameObject.GetComponent<Enemy>().TakeDamage(90000); }
         cheatCanvas.enabled = false;
     }
 
@@ -37,7 +35,6 @@ public class Cheats : MonoBehaviour
 
     public void IncreaseAmmo()
     {
-        pauseManager._isPaused = false;
         cheatCanvas.enabled = false;
         character.equippedWeaponMagazine.SetAmmuniationTotal(character.equippedWeaponMagazine.GetAmmunitionTotal() + 100);
     }
