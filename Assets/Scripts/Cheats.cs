@@ -14,7 +14,7 @@ public class Cheats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        character = GameObject.Find("Player").GetComponent<Character>();
+        character = GameObject.FindWithTag("Player").GetComponent<Character>();
         enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         enemy.AddRange(enemyArray);
         cheatCanvas.enabled = false;
