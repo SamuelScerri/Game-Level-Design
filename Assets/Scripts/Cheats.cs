@@ -10,11 +10,13 @@ public class Cheats : MonoBehaviour
     public List<GameObject> enemy = new List<GameObject>();
     public PauseManager pauseManager;
     public Character character;
+    public HealthManager healthManager;
     public Canvas cheatCanvas;
     // Start is called before the first frame update
     void Start()
     {
         character = GameObject.FindWithTag("Player").GetComponent<Character>();
+        healthManager = GameObject.FindWithTag("Player").GetComponent<HealthManager>();
         enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         enemy.AddRange(enemyArray);
         cheatCanvas.enabled = false;
@@ -29,6 +31,27 @@ public class Cheats : MonoBehaviour
     {
         for(int i = 0; i < enemyArray.Length; i++) { enemy[i].gameObject.GetComponent<Enemy>().Die(); }
         cheatCanvas.enabled = false;
+    }
+
+    public void GodMode()
+    {
+        healthManager.EnableInfiniteHealth();
+    }
+
+    public void SkipToNextLevel()
+    {
+        if (SceneManager.GetActiveScene().name == "Student1-Level1")
+        {
+            SceneManager.LoadScene("Student1-Level1BossCutscene");
+        }
+        else if (SceneManager.GetActiveScene().name == "Student1-Level1Boss")
+        {
+            SceneManager.LoadScene("Lvl2Cutscene");
+        }
+        else if (SceneManager.GetActiveScene().name == "Lvl2")
+        {
+            SceneManager.LoadScene("Level3");
+        }
     }
 
     public void SelfDestroy() { SceneManager.LoadScene("YouLose"); }

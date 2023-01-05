@@ -16,12 +16,25 @@ public class HealthManager : MonoBehaviour
 
 	private Interactor interactor;
 
+	private bool _godMode;
+
 	private void Start()
 	{
 		interactor = GetComponent<Interactor>();
         _healthUI = Instantiate(_healthPrefab) as GameObject;
 		UpdateUI();
 		DontDestroyOnLoad(_healthUI);
+    }
+
+    public void EnableInfiniteHealth()
+    {
+    	_godMode = true;
+    }
+
+    private void Update()
+    {
+    	if (_godMode)
+    		SetHealth(9999);
     }
 
 	private void SetHealth(int amount)
