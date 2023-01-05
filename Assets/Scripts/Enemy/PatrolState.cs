@@ -25,13 +25,14 @@ public class PatrolState : StateMachineBehaviour
         foreach (Transform t in go.transform)
             waypoints.Add(t);*/
 
-        agent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].transform.position);
+        if (waypoints.Length > 0)
+            agent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].transform.position);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(agent.remainingDistance <= agent.stoppingDistance)
+        if(agent.remainingDistance <= agent.stoppingDistance && waypoints.Length > 0)
             agent.SetDestination(waypoints[Random.Range(0, waypoints.Length)].transform.position);
 
         timer += Time.deltaTime;
