@@ -24,7 +24,7 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
-		interactor= GameObject.Find("Player").GetComponent<Interactor>();
+		interactor = GameObject.FindWithTag("Player").GetComponent<Interactor>();
 		if(gameObject.name == "WallBuy")
 		{
             interactor.interactable = this;
@@ -32,5 +32,11 @@ public class Interactable : MonoBehaviour
 		
         /*weaponToAdd= GameObject.Find("P_LPSP_WEP_AR_01").GetComponent<GameObject>();*/
         /*executeEvent.AddListener(GameObject.Find("Player").GetComponent<Interactor>().WallBuy);*/
+    }
+
+    private void Update()
+    {
+    	if (interactor == null)
+    		interactor = GameObject.FindWithTag("Player").GetComponent<Interactor>();
     }
 }

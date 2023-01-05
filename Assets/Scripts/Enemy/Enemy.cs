@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
         healthManager = player.GetComponent<HealthManager>();
 
-        Component[] audioSources = GetComponents(typeof(AudioSource));
+        AudioSource[] audioSources = GetComponents<AudioSource>();
 
         walk = (AudioSource) audioSources[3];
         run = (AudioSource) audioSources[2];
