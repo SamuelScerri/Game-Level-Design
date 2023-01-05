@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject[] itemDrops;
     private Interactor interactor;
     private HealthManager healthManager;
-    public AudioSource walk, run, attack, die;
+    private AudioSource walk, run, attack, die;
 
     public void Start()
     {
@@ -20,6 +20,13 @@ public class Enemy : MonoBehaviour
         interactor = player.GetComponent<Interactor>();
 
         healthManager = player.GetComponent<HealthManager>();
+
+        Component[] audioSources = GetComponents(typeof(AudioSource));
+
+        walk = (AudioSource) audioSources[3];
+        run = (AudioSource) audioSources[2];
+        attack = (AudioSource) audioSources[1];
+        die = (AudioSource) audioSources[0];
     }
 
     public void SetHealth(int amount)
