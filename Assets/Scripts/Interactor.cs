@@ -39,6 +39,8 @@ public class Interactor : MonoBehaviour
 
 	private HealthManager healthManager;
 
+	public int zombiesKilled;
+
 	private void Start()
 	{
 		interactable= GameObject.Find("WallBuy").GetComponent<Interactable>();

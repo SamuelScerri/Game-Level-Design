@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
     {
         HP -= damageAmount;
         interactor.IncreaseScore(10);
+
         if(HP <= 0)
         {
             Die();
@@ -72,6 +73,7 @@ public class Enemy : MonoBehaviour
         walk.Stop();
         die.Play();
         interactor.IncreaseScore(50);
+        interactor.zombiesKilled++;
         //Play Death Animation
         animator.SetTrigger("die");
         GetComponent<Collider>().enabled = false;
