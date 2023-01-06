@@ -51,6 +51,8 @@ public class FinalBoss : MonoBehaviour
 
 	private float _runLayerDamp;
 
+	private AudioSource _growlSource, _attackSource, _screamSource, _kickSource;
+
 	private void Start()
 	{
 		_animator = GetComponent<Animator>();
@@ -66,6 +68,15 @@ public class FinalBoss : MonoBehaviour
 		_player = GameObject.FindWithTag("Player");
 
 		_currentDamageAmount = _damageAmountToRetreat;
+
+		AudioSource[] audioSources = GetComponents<AudioSource>();
+
+		_screamSource = audioSources[0];
+		_attackSource = audioSources[1];
+		_growlSource = audioSources[2];
+		_kickSource = audioSources[3];
+
+		_growlSource.Play();
 	}
 
 	public void TakeDamage(int amount)
@@ -80,6 +91,7 @@ public class FinalBoss : MonoBehaviour
 
 		if (_currentDamageAmount <= 0)
 		{
+			_growlSource.Stop();
 			//If The Player Damages The Boss Enough, He Will Now Attempt To Charge Them
 			_attackMode = AttackMode.RetreatMode;
 			_agent.speed = _retreatSpeed;
@@ -160,6 +172,8 @@ public class FinalBoss : MonoBehaviour
 	//Here The Boss Will Run To The Player And Attack When In Range
 	private IEnumerator Attack()
 	{
+		_attackSource.Play();
+
 		_animator.SetTrigger("Attack");
 		yield return new WaitForSeconds(_attackTime);
 
@@ -168,6 +182,7 @@ public class FinalBoss : MonoBehaviour
 		if (Vector3.Distance(transform.position, _player.transform.position) < _attackRadius)
 		{
 			_player.GetComponent<HealthManager>().TakeDamage(5);
+			_kickSource.Play();
 			//_hitSound.Play();
 		}
 
@@ -200,6 +215,8 @@ public class FinalBoss : MonoBehaviour
 	private IEnumerator PrepareCharge()
 	{
 		_agent.stoppingDistance = 3;
+
+		_screamSource.Play();
 		_animator.SetTrigger("Scream");
 		_animator.SetTrigger("Run");
 
@@ -208,12 +225,16 @@ public class FinalBoss : MonoBehaviour
 		_attackMode = AttackMode.ChargeMode;
 		_agent.speed = _chargingSpeed;
 		_agent.SetDestination(_player.transform.position);
+		_growlSource.Play();
 
 		_chargeCoroutine = null;
 	}
 
 	private void Die()
 	{
+		_growlSource.Stop();
+		_screamSource.Play();
+
 		_attackMode = AttackMode.Dead;
 		_animator.SetTrigger("Dead");
 
