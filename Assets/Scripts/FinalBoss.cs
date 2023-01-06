@@ -46,6 +46,10 @@ public class FinalBoss : MonoBehaviour
 	private const float _crawlAnimationSpeed = .523f * 8;
 
 	private float _deathAnimationDamp;
+	private float _runAnimationDamp;
+	private float _crouchAnimationDamp;
+
+	private float _runLayerDamp;
 
 	private void Start()
 	{
@@ -103,9 +107,11 @@ public class FinalBoss : MonoBehaviour
 		else if (_attackMode == AttackMode.Dead)
 			_animator.SetLayerWeight(4, Mathf.SmoothDamp(_animator.GetLayerWeight(4), 1, ref _deathAnimationDamp, .2f));
 
+		float finalRunSpeed = _agent.velocity.magnitude / _agent.speed;
+
 		_animator.SetFloat("Run Speed", _agent.velocity.magnitude / _runAnimationSpeed);
 		_animator.SetFloat("Crawl Speed", _agent.velocity.magnitude / _crawlAnimationSpeed);
-		_animator.SetLayerWeight(1, _agent.velocity.magnitude / _agent.speed);
+		_animator.SetLayerWeight(1, Mathf.SmoothDamp(_animator.GetLayerWeight(1), finalRunSpeed, ref _runAnimationDamp, .1f));
 
 		_agent.acceleration = _agent.speed * 2;
 	}
@@ -153,7 +159,6 @@ public class FinalBoss : MonoBehaviour
 	//Here The Boss Will Run To The Player And Attack When In Range
 	private IEnumerator Attack()
 	{
-		_agent.speed = _normalSpeed;
 		_animator.SetTrigger("Attack");
 		yield return new WaitForSeconds(_attackTime);
 
