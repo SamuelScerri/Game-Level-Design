@@ -72,7 +72,8 @@ public class FinalBoss : MonoBehaviour
 	{
 		if (_attackMode == AttackMode.NormalMode)
 		{
-			_animator.SetTrigger("Hurt");
+			if (_attackCoroutine == null)
+				_animator.SetTrigger("Hurt");
 			_health -= amount;
 			_currentDamageAmount -= amount;
 		}
