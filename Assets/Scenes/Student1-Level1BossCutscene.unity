@@ -3568,7 +3568,7 @@ ParticleSystem:
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
-  autoRandomSeed: 1
+  autoRandomSeed: 0
   startDelay:
     serializedVersion: 2
     minMaxState: 0
@@ -3625,7 +3625,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 0
+  randomSeed: 9976
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11234,7 +11234,7 @@ GameObject:
   - component: {fileID: 1109117159}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19376,6 +19376,8 @@ PlayableDirector:
     value: {fileID: 1109117159}
   - key: {fileID: 2160407721226968675, guid: f31a19cbe5892ec4993086e53f1305f2, type: 2}
     value: {fileID: 564072616}
+  - key: {fileID: -5324385267249678083, guid: f31a19cbe5892ec4993086e53f1305f2, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 7c56d784cba95794b840aa6dd92cc210: {fileID: 591569271}

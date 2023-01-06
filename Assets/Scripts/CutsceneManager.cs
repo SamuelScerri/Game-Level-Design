@@ -20,6 +20,8 @@ public class CutsceneManager : MonoBehaviour
 	private GameObject canvas;
     private GameObject healthCanvas;
 
+    private GameObject[] uiElements;
+
     private void Start()
 	{
 		/*_animation = GetComponent<Animation>();
@@ -29,12 +31,17 @@ public class CutsceneManager : MonoBehaviour
 		_transitionImage.color = Color.black;
 
 		_camera.SetActive(false);*/
-		healthCanvas = GameObject.Find("Health(Clone)");
-		healthCanvas.SetActive(false);
+		//healthCanvas = GameObject.Find("Health(Clone)");
+		//healthCanvas.SetActive(false);
 		_player = GameObject.FindWithTag("Player");
 		_player.SetActive(false);
-		canvas = GameObject.Find("P_LPSP_UI_Canvas(Clone)");
-        canvas.SetActive(false);
+
+		uiElements = GameObject.FindGameObjectsWithTag("UI");
+
+		foreach (GameObject element in uiElements)
+			element.SetActive(false);
+		//canvas = GameObject.Find("P_LPSP_UI_Canvas(Clone)");
+        //canvas.SetActive(false);
 
 
         if (SceneManager.GetActiveScene().name == "Student1-Level1BossCutscene")
@@ -57,8 +64,11 @@ public class CutsceneManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Student1-Level1Boss");
 		_player.SetActive(true);
-        canvas.SetActive(true);
-		healthCanvas.SetActive(true);
+        //canvas.SetActive(true);
+		//healthCanvas.SetActive(true);
+
+		foreach (GameObject element in uiElements)
+			element.SetActive(true);
     }
 
     public IEnumerator EndLevel2Cutscene()
@@ -67,8 +77,11 @@ public class CutsceneManager : MonoBehaviour
         yield return new WaitForSeconds(10);
         SceneManager.LoadScene("Lvl2");
         _player.SetActive(true);
-        canvas.SetActive(true);
-        healthCanvas.SetActive(true);
+        //canvas.SetActive(true);
+        //healthCanvas.SetActive(true);
+
+        foreach (GameObject element in uiElements)
+			element.SetActive(true);
     }
 
     public IEnumerator EndLevel3BossCutscene()
@@ -77,8 +90,11 @@ public class CutsceneManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Level3Boss");
         _player.SetActive(true);
-        canvas.SetActive(true);
-        healthCanvas.SetActive(true);
+        //canvas.SetActive(true);
+        //healthCanvas.SetActive(true);
+
+        foreach (GameObject element in uiElements)
+			element.SetActive(true);
     }
 
     /*public void StartCutscene()
