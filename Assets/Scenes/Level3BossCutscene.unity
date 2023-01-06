@@ -3877,6 +3877,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 960541523}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &901460155
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525951, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495495382901525952, guid: 2da8dd624428673489be337aaf09ba24,
+        type: 3}
+      propertyPath: m_Name
+      value: Cutscene Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2da8dd624428673489be337aaf09ba24, type: 3}
 --- !u!4 &903958252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 475148, guid: b826295956c65444987d7baae67c5858,

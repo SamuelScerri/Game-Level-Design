@@ -81,6 +81,7 @@ public class FinalBoss : MonoBehaviour
 
 	public void TakeDamage(int amount)
 	{
+		_player.GetComponent<Interactor>().IncreaseScore(10);
 		if (_attackMode == AttackMode.NormalMode)
 		{
 			if (_attackCoroutine == null)
@@ -230,15 +231,16 @@ public class FinalBoss : MonoBehaviour
 		_chargeCoroutine = null;
 	}
 
-	private void Die()
+	public void Die()
 	{
-		_growlSource.Stop();
+        _player.GetComponent<Interactor>().IncreaseScore(100);
+        _growlSource.Stop();
 		_screamSource.Play();
 
 		_attackMode = AttackMode.Dead;
 		_animator.SetTrigger("Dead");
 
 		_agent.ResetPath();
-		
+		Destroy(gameObject, 5);
 	}
 }

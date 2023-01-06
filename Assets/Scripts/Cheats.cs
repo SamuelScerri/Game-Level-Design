@@ -29,7 +29,9 @@ public class Cheats : MonoBehaviour
 
     public void KillAllEnemies()
     {
-        for(int i = 0; i < enemyArray.Length; i++) { enemy[i].gameObject.GetComponent<Enemy>().Die(); }
+        for (int i = 0; i < enemyArray.Length; i++) { enemy[i].gameObject.GetComponent<Enemy>().Die(); }
+        if (SceneManager.GetActiveScene().name == "Level3Boss")
+            { GameObject.FindGameObjectWithTag("FinalBoss").GetComponent<FinalBoss>().Die(); }
         cheatCanvas.enabled = false;
     }
 
@@ -51,6 +53,14 @@ public class Cheats : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Lvl2")
         {
             SceneManager.LoadScene("Level3");
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            SceneManager.LoadScene("Level3BossCutscene");
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3Boss")
+        {
+            SceneManager.LoadScene("YouWin");
         }
     }
 

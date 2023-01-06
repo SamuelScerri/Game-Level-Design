@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class NextScene : MonoBehaviour
         target = GameObject.Find("Target");
         nextSceneCollider = GameObject.Find("Target");
         enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
+        if(SceneManager.GetActiveScene().name == "Level3Boss")
+            { enemyArray = GameObject.FindGameObjectsWithTag("FinalBoss"); }
         enemy.AddRange(enemyArray);
         nextSceneCollider.SetActive(false);
         target.SetActive(false);

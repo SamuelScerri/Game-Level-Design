@@ -45,6 +45,10 @@ public class CutsceneManager : MonoBehaviour
         {
             StartCoroutine(EndLevel2Cutscene());
         }
+        else if (SceneManager.GetActiveScene().name == "Level3BossCutscene")
+        {
+            StartCoroutine(EndLevel3BossCutscene());
+        }
     }
 
 	public IEnumerator EndLevel1BossCutscene()
@@ -62,6 +66,16 @@ public class CutsceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(10);
         SceneManager.LoadScene("Lvl2");
+        _player.SetActive(true);
+        canvas.SetActive(true);
+        healthCanvas.SetActive(true);
+    }
+
+    public IEnumerator EndLevel3BossCutscene()
+    {
+
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Level3Boss");
         _player.SetActive(true);
         canvas.SetActive(true);
         healthCanvas.SetActive(true);

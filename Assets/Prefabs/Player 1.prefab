@@ -2046,7 +2046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 5341712331378120414, guid: 1cfd28d46bca0dd4884ce6988eee22f1,
     type: 3}
-  _pointsObtained: 200
+  _pointsObtained: 0
   _interactableDistance: 2
   _interactableObjectLayers:
     serializedVersion: 2

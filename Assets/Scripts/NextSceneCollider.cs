@@ -16,6 +16,8 @@ public class NextSceneCollider : MonoBehaviour
         camera.GetComponent<MissionWaypoint>().enemy.Clear();
         camera.GetComponent<MissionWaypoint>().enemyArray = camera.GetComponent<MissionWaypoint>().enemy.ToArray();
         camera.GetComponent<MissionWaypoint>().enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
+        if (SceneManager.GetActiveScene().name == "Level3Boss")
+            { camera.GetComponent<MissionWaypoint>().enemyArray = GameObject.FindGameObjectsWithTag("FinalBoss"); }
         camera.GetComponent<MissionWaypoint>().enemy.AddRange(camera.GetComponent<MissionWaypoint>().enemyArray);
         camera.GetComponent<MissionWaypoint>().targetCanvas = GameObject.Find("TargetCanvas").GetComponent<Canvas>();
         camera.GetComponent<MissionWaypoint>().target = GameObject.Find("Target");
@@ -50,6 +52,14 @@ public class NextSceneCollider : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Lvl2")
         {
             SceneManager.LoadScene("Level3");
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3")
+        {
+            SceneManager.LoadScene("Level3BossCutscene");
+        }
+        else if (SceneManager.GetActiveScene().name == "Level3Boss")
+        {
+            SceneManager.LoadScene("YouWin");
         }
     }
 }
