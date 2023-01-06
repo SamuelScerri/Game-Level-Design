@@ -84,6 +84,17 @@ public class Projectile : MonoBehaviour {
                 Destroy(gameObject);
             }
 
+            if (collision.transform.tag == "FinalBoss")
+            {
+                collision.gameObject.GetComponent<FinalBoss>().TakeDamage(damageAmount);
+                //Instantiate random impact prefab from array
+                Instantiate(bloodImpactPrefabs[Random.Range
+                    (0, bloodImpactPrefabs.Length)], transform.position,
+                    Quaternion.LookRotation(collision.contacts[0].normal));
+                //Destroy bullet object
+                Destroy(gameObject);
+            }
+
             //If bullet collides with "Metal" tag
             if (collision.transform.tag == "Metal")
             {

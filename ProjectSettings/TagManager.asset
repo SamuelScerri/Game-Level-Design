@@ -19,6 +19,8 @@ TagManager:
   - TargetCanvas
   - Weapon
   - Mag
+  - FinalBoss
+  - ChargeArea
   layers:
   - Default
   - TransparentFX

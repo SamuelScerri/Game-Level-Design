@@ -1501,6 +1501,7 @@ GameObject:
   - component: {fileID: 6898027870067269046}
   - component: {fileID: 3512777177583771132}
   - component: {fileID: 3134813305387965159}
+  - component: {fileID: -8946959721501108831}
   m_Layer: 10
   m_Name: Player 1
   m_TagString: Player
@@ -1686,6 +1687,7 @@ MonoBehaviour:
   dampTimeLocomotion: 0.1
   dampTimeAiming: 0.3
   characterAnimator: {fileID: 2210075649793412455}
+  equippedWeaponMagazine: {fileID: 0}
   pauseManager: {fileID: 5341712331378120414, guid: 1cfd28d46bca0dd4884ce6988eee22f1,
     type: 3}
 --- !u!114 &4753120389773270380
@@ -2056,6 +2058,7 @@ MonoBehaviour:
     type: 3}
   inventory: {fileID: 4684956889066864452}
   weaponInventory: {fileID: 4684956889066864454}
+  zombiesKilled: 0
 --- !u!114 &3134813305387965159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2071,6 +2074,23 @@ MonoBehaviour:
   _healthPrefab: {fileID: 7282234188205932835, guid: 89066d18969514114a9f83fb59845da9,
     type: 3}
   _currentHealth: 50
+  _healthUI: {fileID: 0}
+--- !u!208 &-8946959721501108831
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626495593875790748}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 32, y: 0.5, z: 32}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1638318247258575521
 GameObject:
   m_ObjectHideFlags: 0
