@@ -10,7 +10,7 @@ public class HealthManager : MonoBehaviour
 	private GameObject _healthPrefab;
 
 	[SerializeField]
-	public int _currentHealth;
+	public static int _currentHealth;
 
 	public GameObject _healthUI;
 
@@ -23,7 +23,10 @@ public class HealthManager : MonoBehaviour
 		interactor = GetComponent<Interactor>();
         _healthUI = Instantiate(_healthPrefab) as GameObject;
 		UpdateUI();
-		DontDestroyOnLoad(_healthUI);
+		//DontDestroyOnLoad(_healthUI);
+
+		if (_currentHealth == 0)
+			_currentHealth = 100;
     }
 
     public void EnableInfiniteHealth()
@@ -62,6 +65,6 @@ public class HealthManager : MonoBehaviour
 	public void UpdateUI()
 	{
 		_healthUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText("Health: " + _currentHealth.ToString());
-        _healthUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().SetText("Score: " + interactor._pointsObtained.ToString());
+        _healthUI.transform.GetChild(1).GetComponent<TextMeshProUGUI>().SetText("Score: " + Interactor._pointsObtained.ToString());
     }
 }

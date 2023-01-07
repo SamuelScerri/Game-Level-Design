@@ -12,7 +12,7 @@ public class Interactor : MonoBehaviour
 	public PauseManager pauseManager;
 
 	[SerializeField]
-	public float _pointsObtained;
+	public static float _pointsObtained;
 
 	[SerializeField]
 	private float _interactableDistance;
@@ -46,15 +46,17 @@ public class Interactor : MonoBehaviour
 		interactable= GameObject.Find("WallBuy").GetComponent<Interactable>();
         _popupObjectInstance = Instantiate(_popupObject);
 		healthManager = GetComponent<HealthManager>();
-		DontDestroyOnLoad(this.gameObject);
+		//DontDestroyOnLoad(this.gameObject);
 
 		//Set All UI Elements To Never Destroy
 		GameObject[] uiElements = GameObject.FindGameObjectsWithTag("UI");
 
 		foreach (GameObject element in uiElements)
 		{
-			DontDestroyOnLoad(element);
+			//DontDestroyOnLoad(element);
 		}
+
+		healthManager.UpdateUI();
 	}
 
 	void Update()

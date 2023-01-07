@@ -33,13 +33,13 @@ public class CutsceneManager : MonoBehaviour
 		_camera.SetActive(false);*/
 		//healthCanvas = GameObject.Find("Health(Clone)");
 		//healthCanvas.SetActive(false);
-		_player = GameObject.FindWithTag("Player");
-		_player.SetActive(false);
+		//_player = GameObject.FindWithTag("Player");
+		//_player.SetActive(false);
 
-		uiElements = GameObject.FindGameObjectsWithTag("UI");
+		//uiElements = GameObject.FindGameObjectsWithTag("UI");
 
-		foreach (GameObject element in uiElements)
-			element.SetActive(false);
+		//foreach (GameObject element in uiElements)
+			//element.SetActive(false);
 		//canvas = GameObject.Find("P_LPSP_UI_Canvas(Clone)");
         //canvas.SetActive(false);
 
@@ -63,12 +63,12 @@ public class CutsceneManager : MonoBehaviour
         
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Student1-Level1Boss");
-		_player.SetActive(true);
+		//_player.SetActive(true);
         //canvas.SetActive(true);
 		//healthCanvas.SetActive(true);
 
-		foreach (GameObject element in uiElements)
-			element.SetActive(true);
+		//foreach (GameObject element in uiElements)
+			//element.SetActive(true);
     }
 
     public IEnumerator EndLevel2Cutscene()
@@ -76,12 +76,12 @@ public class CutsceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(10);
         SceneManager.LoadScene("Lvl2");
-        _player.SetActive(true);
+        //_player.SetActive(true);
         //canvas.SetActive(true);
         //healthCanvas.SetActive(true);
 
-        foreach (GameObject element in uiElements)
-			element.SetActive(true);
+        //foreach (GameObject element in uiElements)
+			//element.SetActive(true);
     }
 
     public IEnumerator EndLevel3BossCutscene()
@@ -89,12 +89,12 @@ public class CutsceneManager : MonoBehaviour
 
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Level3Boss");
-        _player.SetActive(true);
+        //_player.SetActive(true);
         //canvas.SetActive(true);
         //healthCanvas.SetActive(true);
 
-        foreach (GameObject element in uiElements)
-			element.SetActive(true);
+        //foreach (GameObject element in uiElements)
+			//element.SetActive(true);
     }
 
     /*public void StartCutscene()
