@@ -2046,7 +2046,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseManager: {fileID: 5341712331378120414, guid: 1cfd28d46bca0dd4884ce6988eee22f1,
     type: 3}
-  _pointsObtained: 0
   _interactableDistance: 2
   _interactableObjectLayers:
     serializedVersion: 2
@@ -2073,7 +2072,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPrefab: {fileID: 7282234188205932835, guid: 89066d18969514114a9f83fb59845da9,
     type: 3}
-  _currentHealth: 50
   _healthUI: {fileID: 0}
 --- !u!208 &-8946959721501108831
 NavMeshObstacle:
@@ -2978,6 +2976,7 @@ GameObject:
   - component: {fileID: 6944495653721120235}
   - component: {fileID: 4723351490712293250}
   - component: {fileID: 620809930347430212}
+  - component: {fileID: 1475834222}
   m_Layer: 9
   m_Name: Camera
   m_TagString: MainCamera
@@ -3136,6 +3135,24 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1475834222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492661556614400395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259317312997a5846965b69021b756fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCanvas: {fileID: 0}
+  image: {fileID: 0}
+  target: {fileID: 0}
+  meter: {fileID: 0}
+  enemy: []
+  enemyArray: []
 --- !u!1 &3576625101711079193
 GameObject:
   m_ObjectHideFlags: 0

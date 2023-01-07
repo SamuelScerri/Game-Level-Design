@@ -124,7 +124,10 @@ public class PauseManager : MonoBehaviour
 
     public void Quit()
     {
+        Pause();
         SceneManager.LoadScene("Home");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 }

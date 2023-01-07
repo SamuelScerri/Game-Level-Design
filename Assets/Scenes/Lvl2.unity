@@ -11437,7 +11437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc32673d69ee57b44aa2d43433e2edbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  camera: {fileID: 1475834216}
 --- !u!65 &1057883373
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16220,6 +16220,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1475834222, guid: e0204de2f527844b383a03f37ce50a7c, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1057883371}
+    - target: {fileID: 1475834222, guid: e0204de2f527844b383a03f37ce50a7c, type: 3}
+      propertyPath: targetCanvas
+      value: 
+      objectReference: {fileID: 1558212747}
     - target: {fileID: 1626495593875790748, guid: e0204de2f527844b383a03f37ce50a7c,
         type: 3}
       propertyPath: m_Name
@@ -16455,6 +16463,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 493860, guid: a73967be39a7cc74ca310e8a9d9de82d,
     type: 3}
   m_PrefabInstance: {fileID: 1475202179}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1475834216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3492661556614400395, guid: e0204de2f527844b383a03f37ce50a7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1468379519}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1482994644
 GameObject:
@@ -16963,25 +16977,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1495535854}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1495535856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1986350396922776, guid: 3889b3008743b404aba704ca0f2f2989,
-    type: 3}
-  m_PrefabInstance: {fileID: 1495535854}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1495535857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495535856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc32673d69ee57b44aa2d43433e2edbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
 --- !u!1001 &1502560215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21398,7 +21393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneCollider: {fileID: 1057883371}
   target: {fileID: 1057883371}
-  targetCanvas: {fileID: 0}
+  targetCanvas: {fileID: 1558212747}
   enemy: []
   enemyArray: []
 --- !u!1001 &1964456171

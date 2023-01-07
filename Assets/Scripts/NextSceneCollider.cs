@@ -8,12 +8,10 @@ using static UnityEngine.GraphicsBuffer;
 
 public class NextSceneCollider : MonoBehaviour
 {
-    public GameObject camera;
+    /*public GameObject camera;*/
 
-    private void Start()
+    /*private void Start()
     {
-        camera = GameObject.Find("Camera");
-        camera.GetComponent<MissionWaypoint>().enemy.Clear();
         camera.GetComponent<MissionWaypoint>().enemyArray = camera.GetComponent<MissionWaypoint>().enemy.ToArray();
         camera.GetComponent<MissionWaypoint>().enemyArray = GameObject.FindGameObjectsWithTag("Enemy");
         if (SceneManager.GetActiveScene().name == "Level3Boss")
@@ -23,7 +21,7 @@ public class NextSceneCollider : MonoBehaviour
         camera.GetComponent<MissionWaypoint>().target = GameObject.Find("Target");
         camera.GetComponent<MissionWaypoint>().image = camera.GetComponent<MissionWaypoint>().targetCanvas.transform.GetChild(0).GetComponent<Image>();
         camera.GetComponent<MissionWaypoint>().meter = camera.GetComponent<MissionWaypoint>().image.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-    }
+    }*/
 
     /*private void Update()
     {
