@@ -47,6 +47,8 @@ public class Interactor : MonoBehaviour
         _popupObjectInstance = Instantiate(_popupObject);
 		healthManager = GetComponent<HealthManager>();
 		//DontDestroyOnLoad(this.gameObject);
+		if(SceneManager.GetActiveScene().name == "Student1-Level1")
+		{ GameData.score = 0; _pointsObtained = 0; }
 
 		//Set All UI Elements To Never Destroy
 		GameObject[] uiElements = GameObject.FindGameObjectsWithTag("UI");
