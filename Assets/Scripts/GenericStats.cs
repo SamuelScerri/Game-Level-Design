@@ -27,7 +27,7 @@ public class GenericStats : MonoBehaviour
 	private void Update()
 	{
 		_fpsCounter.text = "FPS: " + (1.0f / Time.smoothDeltaTime).ToString();
-		_zombiesCounter.text = "Zombies Killed: " + _interactor.zombiesKilled;
+		_zombiesCounter.text = "Zombies Killed: " + Interactor.zombiesKilled;
 
 		_canvas.enabled = Input.GetKey(KeyCode.K) ? true : false;
 	}

@@ -39,7 +39,7 @@ public class Interactor : MonoBehaviour
 
 	private HealthManager healthManager;
 
-	public int zombiesKilled;
+	public static int zombiesKilled;
 
 	private void Start()
 	{

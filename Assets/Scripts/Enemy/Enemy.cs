@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
         walk.Stop();
         die.Play();
         interactor.IncreaseScore(50);
-        interactor.zombiesKilled++;
+        Interactor.zombiesKilled++;
         //Play Death Animation
         animator.SetTrigger("die");
         GetComponent<Collider>().enabled = false;
